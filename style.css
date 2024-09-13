@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+*{
+   margin: 0;padding: 0;
+}
+:root{
+   --maincolor: #15182d;
+--secondcolor: orange;
+--btncolor: #0f0f22;
+   --font: font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: normal;
+}
+.box{
+   width: 100vw;
+   height:100vh;
+   background-color: var(--maincolor);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+h1{
+   color: var(--secondcolor);
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: normal;
+
+}
+.inst{
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: normal;
+   font-style: italic;
+   color: rgb(104, 95, 95);
+   font-weight: bold;
+}
+.box input{
+   width: 500px;
+   height: 25px;
+   margin-right: 7px;
+   background-color: var(--btncolor);
+   color: var(--secondcolor);
+}
+.result{
+   color: var(--secondcolor);
+   font-family: "Poppins", sans-serif;
+   font-weight: 200;
+   font-style: normal;
+   font-size: 17px;
+}
+.result input{
+   width: 300px;
+   height:75px;
+   margin-right: 100px;
+   margin-left: 20px;
+}
+.box input::placeholder{
+   padding: 5px;
+   font-size: 12px;
+   color: var(--secondcolor) ;
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: bold;
+}
+button{
+   font-size: 18px;
+   width: 100px;
+   height: 30px;
+   padding: 3px 0px; 
+   background-color: var(--btncolor);
+   color: var(--secondcolor);
+   border-radius: 10px;
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: normal;
+   padding: 1px;
+   border: 1px solid;
+   margin: 5px;
+   cursor: pointer;
+}
+button a{
+   text-decoration: none;
+   color: var(--secondcolor);
+}
+button:hover{
+  transform:scale(1.1);
+  background-color: rgb(16, 16, 56);
+}
+button:active{
+    background-color: black;
+}
+.madeby{
+    display: flex;
+    flex-direction: column;
+    color: var(--secondcolor);
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    position: fixed;
+    bottom:3px;
+    right: 3px;
+}
+.madeby a{
+    color: white;
+    text-decoration: none;
+}
+.madeby a:hover{
+    background-color: rgb(38, 24, 93);
+}
