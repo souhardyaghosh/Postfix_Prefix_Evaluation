@@ -68,5 +68,5 @@ The calculator is accessible at [prepostcalc.surge.sh](https://prepostcalc.surge
 
 ## **Labels**
 
-- **Keywords**: Prefix Calculator, Postfix Calculator, Evaluate Expressions, WebAssembly Calculator
+- **Keywords**: Prefix Calculator, Postfix Calculator, Postfix Prefix Calculator, Evaluate Expressions, WebAssembly Calculator
 - **Meta Description**: A powerful web-based tool for evaluating prefix and postfix mathematical expressions. Built using HTML, CSS, JavaScript, and C, providing efficient and accurate results.
