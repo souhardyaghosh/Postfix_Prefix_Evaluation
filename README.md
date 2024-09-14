@@ -19,8 +19,8 @@ Welcome to the Prefix and Postfix Calculator project! This tool evaluates mathem
 
 ## **Contributors**
 
-- **Souhardya**: [GitHub Profile](https://github.com/souhardya)
-- **Shazeb**: [GitHub Profile](https://github.com/shazeb)
+- **Souhardya**: [GitHub Profile](https://github.com/souhardyaghosh)
+- **Shazeb**: [GitHub Profile](https://github.com/msasama)
 
 ## **License**
 
