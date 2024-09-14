@@ -47,14 +47,18 @@ h1{
    color: var(--secondcolor);
    font-family: "Poppins", sans-serif;
    font-weight: 200;
-   font-style: normal;
+   font-style: 17px;
    font-size: 17px;
+   margin-top: 20px;
 }
-.result input{
-   width: 300px;
-   height:75px;
-   margin-right: 100px;
-   margin-left: 20px;
+.result input {
+   width: 500px; /* Set a fixed width for the input box */
+   height: 75px; /* Increase the height of the input box */
+   font-size: 32px; /* Increase the font size */
+   padding-left: 20px; /* Add space from the left margin */
+   border: 2px solid var; /* Optional: Remove the border for a cleaner look */
+   background-color: transparent; /* Optional: Transparent background */
+   color: var(--secondcolor); /* Ensure the text color matches the theme */
 }
 .box input::placeholder{
    padding: 5px;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefix Evaluation</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="prefix_calculator.js"></script> 
+</head>
+<body>
+    <div class="box">
+        <h1>Prefix Evaluation</h1>
+        <div class="inst">Enter your prefix expression in the box below</div>
+
+        <div class="input">
+            <input type="text" placeholder="Enter your expression" id="expression">
+            <button onclick="evaluateExpression()">Evaluate</button>
+        </div>
+
+        <div class="result">
+            <label for="result">RESULT:</label>
+            <input type="text" id="result" readonly>
+        </div>
+
+        <div class="btns">
+            <button onclick="window.location.href='post_eval.html'">Postfix</button>
+            <button onclick="alert('Prefix evaluation is currently active')">Prefix</button>
+        </div>
+
+        <div class="madeby">
+            <span>By <a href="https://github.com/souhardyaghosh" target="_blank" rel="noopener noreferrer">Souhardya</a> and <a href="https://github.com/msasama" target="_blank" rel="noopener noreferrer">Shazeb</a></span>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the WebAssembly module to be fully initialized
+        Module.onRuntimeInitialized = function() {
+            var calculatePrefix = Module.cwrap('prefix_calculator', 'number', ['string']);
+            
+            window.evaluateExpression = function() {
+                var expression = document.getElementById('expression').value;
+                
+                if (!expression) {
+                    alert("Please enter a valid expression.");
+                    return;
+                }
+                
+                var result = calculatePrefix(expression);
+                document.getElementById('result').value = result;
+            };
+        };
+    </script>
+</body>
+</html>

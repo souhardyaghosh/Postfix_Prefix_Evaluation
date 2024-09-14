@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postfix Evaluation</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="post_eval.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>Postfix Evaluation</h1>
+        <div class="inst">Enter your postfix expression in the box below</div>
+
+        <div class="input">
+            <input type="text" placeholder="Enter your expression" id="expression">
+            <button onclick="evaluatePostfixExpression()">Evaluate</button>
+        </div>
+
+        <div class="result">
+            <label for="result">RESULT:</label>
+            <input type="text" id="result" readonly>
+        </div>
+
+        <div class="btns">
+            <button onclick="alert('Postfix evaluation is currently active')">Postfix</button>
+            <button onclick="window.location.href='pre_eval.html'">Prefix</button>
+        </div>
+
+        <div class="madeby">
+            <span>By <a href="https://github.com/souhardyaghosh">Souhardya</a> and <a href="https://github.com/msasama">Shazeb</a></span>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the WebAssembly module to be fully initialized
+        Module.onRuntimeInitialized = function() {
+            console.log("WebAssembly module loaded.");
+            var evaluatePostfix = Module.cwrap('evaluate_postfix', 'number', ['string']);
+            
+            window.evaluatePostfixExpression = function() {
+                try {
+                    var expression = document.getElementById('expression').value;
+                    
+                    if (!expression) {
+                        alert("Please enter a valid expression.");
+                        return;
+                    }
+                    
+                    var result = evaluatePostfix(expression);
+                    document.getElementById('result').value = result;
+                } catch (error) {
+                    console.error("Error evaluating expression:", error);
+                    alert("An error occurred. Check the console for details.");
+                }
+            };
+        };
+    </script>
+</body>
+</html>
